@@ -1,0 +1,18 @@
+更新trading partner表
+有plan code用plan code，没有plan code用cost center，都没有用默认
+科目代码mapping到GOE的，不论是否有T2都会产生cost center
+科目代码mapping到VEA的，不产生costcenter，分解到其他四项
+
+1.	GOE+T2 CODE的mapping，参照附件三的cost center mapping table，并在SUN MASTER里查找对应的T2X0并Mapping到Profit Center/SEGMENT/HKOCI CODE
+2.	若原科目mapping到GOE科目且未带T2 CODE，依据company code默认一个cost center：
+CN11	ZZZZZZZ1
+CN12	ZZZZZZZ2
+CN13	ZZZZZZZ3
+CN14	ZZZZZZZ4
+CN15	ZZZZZZZ5
+CN16	ZZZZZZZ6
+CN17	ZZZZZZZ7
+
+3.	以数字开头的VEA科目相关的T2 CODE，在SUN MASTER里查找对应的T2X0并mapping到Profit Center/SEGMENT/HKOCI CODE(mapping中无以非数字开头的)
+4.	TO CLOSE科目的mapping，参照附件四赋予一个SAP Code  ok
+5.	你手里的trading partner的编码是老版的，更新一下编码。新的编码参照附件五的相关sheet页  (虚拟使用的是本级)
